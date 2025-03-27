@@ -155,54 +155,94 @@ namespace _4902_GCD2501
              * Example 8: While Loops + Switch Statements
              */
 
-            while (true)
-            {
-                Console.WriteLine("\nContact Management System");
-                Console.WriteLine("1. Add Contact");
-                Console.WriteLine("2. Edit Contact");
-                Console.WriteLine("3. Remove Contact");
-                Console.WriteLine("4. Search Contact");
-                Console.WriteLine("\nPlease choose an option (1-4): ");
+            //while (true)
+            //{
+            //    Console.WriteLine("\nContact Management System");
+            //    Console.WriteLine("1. Add Contact");
+            //    Console.WriteLine("2. Edit Contact");
+            //    Console.WriteLine("3. Remove Contact");
+            //    Console.WriteLine("4. Search Contact");
+            //    Console.WriteLine("\nPlease choose an option (1-4): ");
 
-                int option = int.Parse(Console.ReadLine());
+            //    string option = Console.ReadLine(); // user input for option
 
-                switch (option)
-                {
-                    case 1:
-                        Console.WriteLine("--Add Contact--");
-                        Console.WriteLine("Please enter your name: ");
-                        string name = Console.ReadLine();
-                        Console.WriteLine("Please enter your phone number: ");
-                        string phoneNumber = Console.ReadLine();
+            //    switch (option)
+            //    {
+            //        case "1":
+            //            Console.WriteLine("--Add Contact--");
+            //            Console.WriteLine("Please enter your name: ");
+            //            string name = Console.ReadLine();
+            //            Console.WriteLine("Please enter your phone number: ");
+            //            string phoneNumber = Console.ReadLine();
 
-                        Console.WriteLine($"Contact (Name: {name}, Phone Number: {phoneNumber}) was added.");
-                        break;
-                    case 2:
-                        Console.WriteLine("--Edit Contact--");
-                        break;
-                    case 3:
-                        Console.WriteLine("--Remove Contact--");
-                        break;
-                    case 4:
-                        Console.WriteLine("--Search Contact--");
-                        break;
-                    default:
-                        Console.WriteLine("Invalid option");
-                        break;
-                }
+            //            Console.WriteLine($"Contact (Name: {name}, Phone Number: {phoneNumber}) was added.");
+            //            break;
+            //        case "2":
+            //            Console.WriteLine("--Edit Contact--");
+            //            break;
+            //        case "3":
+            //            Console.WriteLine("--Remove Contact--");
+            //            break;
+            //        case "4":
+            //            Console.WriteLine("--Search Contact--");
+            //            break;
+            //        default:
+            //            Console.WriteLine("Invalid option");
+            //            break;
+            //    }
 
-                Console.WriteLine("\nDo you want to continue? (y/n)");
-                string answer = Console.ReadLine();
-                if (answer == "n")
-                {
-                    Console.WriteLine("Goodbye!");
-                    break;
-                }
-            }
+            //    Console.WriteLine("\nDo you want to continue? (y/n)"); // Y/y or N/n
+            //    string answer = Console.ReadLine().ToLower(); // user input for answer
+            //    if (answer == "n")
+            //    {
+            //        Console.WriteLine("Goodbye!");
+            //        break;
+            //    }
+            //}
 
+            /* 
+             * Example 9: Arrays
+             * See more: https://www.w3schools.com/cs/cs_arrays.php
+             */
 
+            // Integer Array
 
+            //int x = 5;
+            //int[] y = new int[5];
 
+            //for(int i = 0; i < 5; i++)
+            //{
+            //    Console.WriteLine("y[" + i + "] = " + y[i]);
+
+            //    //Console.WriteLine($"y[{i}] = {y[i]}");
+            //}
+
+            //y[0] = 10;
+            //y[1] = 20;
+            //y[2] = 30;
+            //y[3] = 40;
+            //y[4] = 50;
+
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    //Console.WriteLine("y[" + i + "] = " + y[i]);
+
+            //    Console.WriteLine($"y[{i}] = {y[i]}");
+            //}
+
+            // String Array
+
+            //string[] names = new string[] { "John", "Jane", "Joe", "Jill", "Jack" };
+
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    Console.WriteLine("names[" + i + "] = " + names[i]);
+            //}
+
+            //for (int i = 0; i < names.Length; i++)
+            //{
+            //    Console.WriteLine("names[" + i + "] = " + names[i]);
+            //}
         }
     }
 }

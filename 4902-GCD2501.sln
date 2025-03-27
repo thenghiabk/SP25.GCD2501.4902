@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35913.81 d17.13
+VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4902-GCD2501", "4902-GCD2501\4902-GCD2501.csproj", "{92866C71-ED22-48EA-9719-117926FB32E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManagementSystemBasic", "ContactManagementSystemBasic\ContactManagementSystemBasic.csproj", "{4B4F9E33-CBA7-4673-88BA-EA7BAA62DF67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveCoding", "LiveCoding\LiveCoding.csproj", "{4726F946-1A9A-495A-9E91-CAE442836B87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4B4F9E33-CBA7-4673-88BA-EA7BAA62DF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B4F9E33-CBA7-4673-88BA-EA7BAA62DF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B4F9E33-CBA7-4673-88BA-EA7BAA62DF67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4726F946-1A9A-495A-9E91-CAE442836B87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4726F946-1A9A-495A-9E91-CAE442836B87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4726F946-1A9A-495A-9E91-CAE442836B87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4726F946-1A9A-495A-9E91-CAE442836B87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
