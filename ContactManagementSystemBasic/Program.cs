@@ -15,6 +15,7 @@ namespace ContactManagementSystemBasic
         static string[] names = new string[maxContacts];
         static string[] phoneNumbers = new string[maxContacts];
         static string[] emails = new string[maxContacts];
+        static string[] dobs = new string[maxContacts];
 
         // Keep track of how many contacts we have
         static int contactCount = 0;
@@ -29,8 +30,9 @@ namespace ContactManagementSystemBasic
                 Console.WriteLine("1. Add Contact");
                 Console.WriteLine("2. Display Contacts");
                 Console.WriteLine("3. Find a Contact");
-                Console.WriteLine("4. Remove a Contact");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("4. Edit a Contact");
+                Console.WriteLine("5. Remove a Contact");
+                Console.WriteLine("6. Exit");
                 Console.Write("Choose an option: ");
 
                 string choice = Console.ReadLine();
@@ -47,9 +49,12 @@ namespace ContactManagementSystemBasic
                         FindContact();
                         break;
                     case "4":
+                        EditContact();
+                        break; 
+                    case "5":
                         RemoveContact();
                         break;
-                    case "5":
+                    case "6":
                         running = false;
                         break;
                     default:
@@ -59,6 +64,11 @@ namespace ContactManagementSystemBasic
             }
 
             Console.WriteLine("Goodbye!");
+        }
+
+        static void EditContact()
+        {
+
         }
         static void AddContact()
         {
@@ -73,7 +83,10 @@ namespace ContactManagementSystemBasic
                 Console.Write("Enter email address: ");
                 emails[contactCount] = Console.ReadLine();
 
-                contactCount++; // Important: Increment the count!
+                Console.Write("Enter D.O.B: ");
+                dobs[contactCount] = Console.ReadLine();
+
+                contactCount++; // count = count + 1
 
                 Console.WriteLine("Contact added!");
             }
@@ -93,7 +106,7 @@ namespace ContactManagementSystemBasic
             Console.WriteLine("Contacts:");
             for (int i = 0; i < contactCount; i++)
             {
-                Console.WriteLine($"  Name: {names[i]}, Phone: {phoneNumbers[i]}, Email: {emails[i]}");
+                Console.WriteLine($"  Name: {names[i]}, Phone: {phoneNumbers[i]}, Email: {emails[i]}, D.O.B: {dobs[i]}");
             }
         }
 
@@ -109,15 +122,18 @@ namespace ContactManagementSystemBasic
             string searchName = Console.ReadLine();
 
             bool found = false;
+
             for (int i = 0; i < contactCount; i++)
             {
                 //Use .Equals and ignore cases when comparing
                 if (names[i].Equals(searchName, StringComparison.OrdinalIgnoreCase))
                 {
-                    Console.WriteLine($"  Name: {names[i]}, Phone: {phoneNumbers[i]}, Email: {emails[i]}");
+                    Console.WriteLine($"  Name: {names[i]}, Phone: {phoneNumbers[i]}, Email: {emails[i]}, D.O.B: {dobs[i]}");
+                    
                     found = true;
                 }
             }
+
             if (!found)
             {
                 Console.WriteLine("Contact Not Found.");
@@ -154,12 +170,14 @@ namespace ContactManagementSystemBasic
                     names[i] = names[i + 1];
                     phoneNumbers[i] = phoneNumbers[i + 1];
                     emails[i] = emails[i + 1];
+                    dobs[i] = dobs[i + 1];
                 }
 
                 // "Clear" the last element (not strictly necessary, but good practice)
                 names[contactCount - 1] = null;
                 phoneNumbers[contactCount - 1] = null;
                 emails[contactCount - 1] = null;
+                dobs[contactCount - 1] = null;
 
                 contactCount--; // Decrement the count
 
