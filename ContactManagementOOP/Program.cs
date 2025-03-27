@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ContactManagementSystemBasic
-{
+namespace ContactManagementOOP
+{ 
     public class Program
     {
         // Maximum number of contacts we can store (you can change this)
@@ -50,7 +50,7 @@ namespace ContactManagementSystemBasic
                         break;
                     case "4":
                         EditContact();
-                        break; 
+                        break;
                     case "5":
                         RemoveContact();
                         break;
@@ -96,7 +96,7 @@ namespace ContactManagementSystemBasic
                 {
                     phoneNumbers[indexToEdit] = newPhoneNumber;
                 }
-                    
+
 
                 Console.Write("Enter new email address: ");
                 string newEmail = Console.ReadLine();
@@ -104,7 +104,7 @@ namespace ContactManagementSystemBasic
                 {
                     emails[indexToEdit] = newEmail;
                 }
- 
+
                 Console.Write("Enter new D.O.B: ");
                 string newDob = Console.ReadLine();
                 if (!String.IsNullOrEmpty(newDob))
@@ -179,7 +179,7 @@ namespace ContactManagementSystemBasic
                 if (names[i].Equals(searchName, StringComparison.OrdinalIgnoreCase))
                 {
                     Console.WriteLine($"  Name: {names[i]}, Phone: {phoneNumbers[i]}, Email: {emails[i]}, D.O.B: {dobs[i]}");
-                    
+
                     found = true;
                 }
             }
