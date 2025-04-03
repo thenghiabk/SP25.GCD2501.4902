@@ -11,11 +11,8 @@ namespace ContactManagementOOP
         // Maximum number of contacts we can store (you can change this)
         static int maxContacts = 100;
 
-        // Our arrays to store contact information
-        static string[] names = new string[maxContacts];
-        static string[] phoneNumbers = new string[maxContacts];
-        static string[] emails = new string[maxContacts];
-        static string[] dobs = new string[maxContacts];
+        // TODO: Create arrays to store contact information
+        
 
         // Keep track of how many contacts we have
         static int contactCount = 0;
@@ -81,36 +78,27 @@ namespace ContactManagementOOP
 
             for (int i = 0; i < contactCount; i++)
             {
-                if (names[i].Equals(nameToEdit, StringComparison.OrdinalIgnoreCase))
-                {
-                    indexToEdit = i;
-                    break; // Exit the loop once we find it
-                }
+                // TODO: Check if this contact has the name we're looking for
+
             }
 
             if (indexToEdit != -1)
             {
                 Console.Write("Enter new phone number: ");
                 string newPhoneNumber = Console.ReadLine();
-                if (!String.IsNullOrEmpty(newPhoneNumber))
-                {
-                    phoneNumbers[indexToEdit] = newPhoneNumber;
-                }
+                
+                // TODO: Update the phone number
 
 
                 Console.Write("Enter new email address: ");
                 string newEmail = Console.ReadLine();
-                if (!String.IsNullOrEmpty(newEmail))
-                {
-                    emails[indexToEdit] = newEmail;
-                }
+
+                // TODO: Update the email address
 
                 Console.Write("Enter new D.O.B: ");
                 string newDob = Console.ReadLine();
-                if (!String.IsNullOrEmpty(newDob))
-                {
-                    dobs[indexToEdit] = newDob;
-                }
+                
+                // TODO: Update the D.O.B
 
                 Console.WriteLine("Contact updated.");
             }
@@ -125,16 +113,17 @@ namespace ContactManagementOOP
             if (contactCount < maxContacts)
             {
                 Console.Write("Enter contact name: ");
-                names[contactCount] = Console.ReadLine();
+                
 
                 Console.Write("Enter phone number: ");
-                phoneNumbers[contactCount] = Console.ReadLine();
+                
 
                 Console.Write("Enter email address: ");
-                emails[contactCount] = Console.ReadLine();
+                
 
                 Console.Write("Enter D.O.B: ");
-                dobs[contactCount] = Console.ReadLine();
+
+                // TODO: Create a new contact and add it to the arrays
 
                 contactCount++; // count = count + 1
 
@@ -154,10 +143,8 @@ namespace ContactManagementOOP
             }
 
             Console.WriteLine("Contacts:");
-            for (int i = 0; i < contactCount; i++)
-            {
-                Console.WriteLine($"  Name: {names[i]}, Phone: {phoneNumbers[i]}, Email: {emails[i]}, D.O.B: {dobs[i]}");
-            }
+            
+            // TODO: Loop through the arrays and display each contact
         }
 
         static void FindContact()
@@ -173,16 +160,7 @@ namespace ContactManagementOOP
 
             bool found = false;
 
-            for (int i = 0; i < contactCount; i++)
-            {
-                //Use .Equals and ignore cases when comparing
-                if (names[i].Equals(searchName, StringComparison.OrdinalIgnoreCase))
-                {
-                    Console.WriteLine($"  Name: {names[i]}, Phone: {phoneNumbers[i]}, Email: {emails[i]}, D.O.B: {dobs[i]}");
-
-                    found = true;
-                }
-            }
+            // TODO: Loop through the arrays and search for the contact
 
             if (!found)
             {
@@ -203,31 +181,19 @@ namespace ContactManagementOOP
 
             int indexToRemove = -1; // -1 means we haven't found it yet
 
-            for (int i = 0; i < contactCount; i++)
-            {
-                if (names[i].Equals(nameToRemove, StringComparison.OrdinalIgnoreCase))
-                {
-                    indexToRemove = i;
-                    break; // Exit the loop once we find it
-                }
-            }
+            // TODO: Loop through the arrays and search for the contact
 
             if (indexToRemove != -1)
             {
                 // Shift elements to fill the gap
                 for (int i = indexToRemove; i < contactCount - 1; i++)
                 {
-                    names[i] = names[i + 1];
-                    phoneNumbers[i] = phoneNumbers[i + 1];
-                    emails[i] = emails[i + 1];
-                    dobs[i] = dobs[i + 1];
+                    // TODO: Shift elements in the arrays
                 }
 
                 // "Clear" the last element (not strictly necessary, but good practice)
-                names[contactCount - 1] = null;
-                phoneNumbers[contactCount - 1] = null;
-                emails[contactCount - 1] = null;
-                dobs[contactCount - 1] = null;
+                
+                // TODO: Clear the last element
 
                 contactCount--; // Decrement the count
 

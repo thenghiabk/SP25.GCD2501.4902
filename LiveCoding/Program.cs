@@ -54,7 +54,17 @@ namespace LiveCoding
             Contact[] contacts = new Contact[100];
             contacts[0] = john;
             contacts[1] = david;
-
+            contacts[2] = new Contact("Lucy Smith", "123-456-7893", "lucy@gmail.com", "03/04/2005");
+            
+            // Edit Lucy's email
+            for (int i = 0; i < contacts.Length; i++)
+            {
+                if (contacts[i].Name == "Lucy Smith") // ?
+                {
+                    contacts[i].Email = "lucy@kenh14.vn"; // ?
+                    break;
+                }
+            }
 
         }
     }
