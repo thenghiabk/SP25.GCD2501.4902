@@ -5,14 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ContactManagementOOP
-{ 
+{
+    // TODO: Contact class to hold contact information
+
     public class Program
     {
         // Maximum number of contacts we can store (you can change this)
         static int maxContacts = 100;
 
+
         // TODO: Create arrays to store contact information
-        
+        Contact contacts = new Contact[maxContacts];    
 
         // Keep track of how many contacts we have
         static int contactCount = 0;
