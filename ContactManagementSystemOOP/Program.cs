@@ -1,28 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ContactManagementOOP
 {
-    // TODO: Contact class to hold contact information
+    // Define the Contact class
+    public class Contact
+    {
+        public string Name { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string DateOfBirth { get; set; }
+
+        public Contact(string name, string phoneNumber, string email, string dateOfBirth)
+        {
+            Name = name;
+            PhoneNumber = phoneNumber;
+            Email = email;
+            DateOfBirth = dateOfBirth;
+        }
+
+        public override string ToString()
+        {
+            return $"Name: {Name}, Phone: {PhoneNumber}, Email: {Email}, DOB: {DateOfBirth}";
+        }
+    }
 
     public class Program
     {
-        // Maximum number of contacts we can store (you can change this)
         static int maxContacts = 100;
-
-
-        // TODO: Create arrays to store contact information
-        Contact contacts = new Contact[maxContacts];    
-
-        // Keep track of how many contacts we have
+        static Contact[] contacts = new Contact[maxContacts]; // Static array
         static int contactCount = 0;
 
         public static void Main(string[] args)
         {
-            // The main loop of our program
             bool running = true;
             while (running)
             {
@@ -39,97 +48,33 @@ namespace ContactManagementOOP
 
                 switch (choice)
                 {
-                    case "1":
-                        AddContact();
-                        break;
-                    case "2":
-                        DisplayContacts();
-                        break;
-                    case "3":
-                        FindContact();
-                        break;
-                    case "4":
-                        EditContact();
-                        break;
-                    case "5":
-                        RemoveContact();
-                        break;
-                    case "6":
-                        running = false;
-                        break;
-                    default:
-                        Console.WriteLine("Invalid option. Try again.");
-                        break;
+                    case "1": AddContact(); break;
+                    case "2": DisplayContacts(); break;
+                    case "3": FindContact(); break;
+                    case "4": EditContact(); break;
+                    case "5": RemoveContact(); break;
+                    case "6": running = false; break;
+                    default: Console.WriteLine("Invalid option. Try again."); break;
                 }
             }
-
             Console.WriteLine("Goodbye!");
         }
 
-        static void EditContact()
-        {
-            if (contactCount == 0)
-            {
-                Console.WriteLine("No contacts to edit.");
-                return;
-            }
-
-            Console.Write("Enter the name of the contact to edit: ");
-            string nameToEdit = Console.ReadLine();
-
-            int indexToEdit = -1; // -1 means we haven't found it yet
-
-            for (int i = 0; i < contactCount; i++)
-            {
-                // TODO: Check if this contact has the name we're looking for
-
-            }
-
-            if (indexToEdit != -1)
-            {
-                Console.Write("Enter new phone number: ");
-                string newPhoneNumber = Console.ReadLine();
-                
-                // TODO: Update the phone number
-
-
-                Console.Write("Enter new email address: ");
-                string newEmail = Console.ReadLine();
-
-                // TODO: Update the email address
-
-                Console.Write("Enter new D.O.B: ");
-                string newDob = Console.ReadLine();
-                
-                // TODO: Update the D.O.B
-
-                Console.WriteLine("Contact updated.");
-            }
-            else
-            {
-                Console.WriteLine("Contact not found.");
-            }
-
-        }
-        static void AddContact()
+        public static void AddContact()
         {
             if (contactCount < maxContacts)
             {
                 Console.Write("Enter contact name: ");
-                
-
+                string name = Console.ReadLine();
                 Console.Write("Enter phone number: ");
-                
-
+                string phone = Console.ReadLine();
                 Console.Write("Enter email address: ");
-                
-
+                string email = Console.ReadLine();
                 Console.Write("Enter D.O.B: ");
+                string dob = Console.ReadLine();
 
-                // TODO: Create a new contact and add it to the arrays
-
-                contactCount++; // count = count + 1
-
+                contacts[contactCount] = new Contact(name, phone, email, dob);
+                contactCount++;
                 Console.WriteLine("Contact added!");
             }
             else
@@ -137,7 +82,8 @@ namespace ContactManagementOOP
                 Console.WriteLine("Contact list is full!");
             }
         }
-        static void DisplayContacts()
+
+        public static void DisplayContacts()
         {
             if (contactCount == 0)
             {
@@ -146,11 +92,13 @@ namespace ContactManagementOOP
             }
 
             Console.WriteLine("Contacts:");
-            
-            // TODO: Loop through the arrays and display each contact
+            for (int i = 0; i < contactCount; i++)
+            {
+                Console.WriteLine($"{i + 1}. {contacts[i]}");
+            }
         }
 
-        static void FindContact()
+        public static void FindContact()
         {
             if (contactCount == 0)
             {
@@ -160,10 +108,16 @@ namespace ContactManagementOOP
 
             Console.Write("Enter the name to search for: ");
             string searchName = Console.ReadLine();
-
             bool found = false;
 
-            // TODO: Loop through the arrays and search for the contact
+            for (int i = 0; i < contactCount; i++)
+            {
+                if (contacts[i].Name.Equals(searchName, StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine($"Found: {contacts[i]}");
+                    found = true;
+                }
+            }
 
             if (!found)
             {
@@ -171,7 +125,50 @@ namespace ContactManagementOOP
             }
         }
 
-        static void RemoveContact()
+        public static void EditContact()
+        {
+            if (contactCount == 0)
+            {
+                Console.WriteLine("No contacts to edit.");
+                return;
+            }
+
+            Console.Write("Enter the name of the contact to edit: ");
+            string nameToEdit = Console.ReadLine();
+            int indexToEdit = -1;
+
+            for (int i = 0; i < contactCount; i++)
+            {
+                if (contacts[i].Name.Equals(nameToEdit, StringComparison.OrdinalIgnoreCase))
+                {
+                    indexToEdit = i;
+                    break;
+                }
+            }
+
+            if (indexToEdit != -1)
+            {
+                Console.Write("Enter new phone number: ");
+                string newPhoneNumber = Console.ReadLine();
+                contacts[indexToEdit].PhoneNumber = newPhoneNumber;
+
+                Console.Write("Enter new email address: ");
+                string newEmail = Console.ReadLine();
+                contacts[indexToEdit].Email = newEmail;
+
+                Console.Write("Enter new D.O.B: ");
+                string newDob = Console.ReadLine();
+                contacts[indexToEdit].DateOfBirth = newDob;
+
+                Console.WriteLine("Contact updated.");
+            }
+            else
+            {
+                Console.WriteLine("Contact not found.");
+            }
+        }
+
+        public static void RemoveContact()
         {
             if (contactCount == 0)
             {
@@ -181,25 +178,25 @@ namespace ContactManagementOOP
 
             Console.Write("Enter the name of the contact to remove: ");
             string nameToRemove = Console.ReadLine();
+            int indexToRemove = -1;
 
-            int indexToRemove = -1; // -1 means we haven't found it yet
-
-            // TODO: Loop through the arrays and search for the contact
+            for (int i = 0; i < contactCount; i++)
+            {
+                if (contacts[i].Name.Equals(nameToRemove, StringComparison.OrdinalIgnoreCase))
+                {
+                    indexToRemove = i;
+                    break;
+                }
+            }
 
             if (indexToRemove != -1)
             {
-                // Shift elements to fill the gap
                 for (int i = indexToRemove; i < contactCount - 1; i++)
                 {
-                    // TODO: Shift elements in the arrays
+                    contacts[i] = contacts[i + 1];
                 }
-
-                // "Clear" the last element (not strictly necessary, but good practice)
-                
-                // TODO: Clear the last element
-
-                contactCount--; // Decrement the count
-
+                contacts[contactCount - 1] = null;
+                contactCount--;
                 Console.WriteLine("Contact removed.");
             }
             else

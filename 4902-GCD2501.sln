@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveCoding", "LiveCoding\Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManagementSystemOOP", "ContactManagementSystemOOP\ContactManagementSystemOOP.csproj", "{A491B15A-AF41-4A95-8443-6BA80FFCAFF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestingDemo", "UnitTestingDemo\UnitTestingDemo.csproj", "{5D0AF488-5D41-4770-8345-3A95F60D8E11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A491B15A-AF41-4A95-8443-6BA80FFCAFF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A491B15A-AF41-4A95-8443-6BA80FFCAFF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A491B15A-AF41-4A95-8443-6BA80FFCAFF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D0AF488-5D41-4770-8345-3A95F60D8E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D0AF488-5D41-4770-8345-3A95F60D8E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D0AF488-5D41-4770-8345-3A95F60D8E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D0AF488-5D41-4770-8345-3A95F60D8E11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
